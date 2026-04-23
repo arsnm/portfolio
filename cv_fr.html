@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Arsène Mallet - CV</title>
+    <link rel="shortcut icon" type="image/png" href="ressources/images/tempIcon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Curriculum Vitae d'Arsène Mallet (arsnm)">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Arsène (arsnm) Mallet - CV</h1>
+        <p>Voici mon CV. Vous y trouverez toutes les informations me concernant
+        ! Une version anglaise est disponible <a href="cv.html">ici</a>.</p>
+
+        <h2>Coordonnées</h2>
+        <ul>
+            <li>Localisation : Palaiseau, France</li>
+            <li>Email : <a
+                    href="mailto:arsene.mallet@telecom-paris.fr">arsene.mallet@telecom-paris.fr</a></li>
+            <li>LinkedIn : <a
+                    href="https://linkedin.com/in/arsene-mallet">arsene-mallet</a></li>
+            <li>Github : <a href="https://github.com/arsnm">arsnm</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <section>
+            <h2>Formation</h2>
+            <table>
+                <tr>
+                    <th>Diplôme</th>
+                    <th>Établissement</th>
+                    <th>Période</th>
+                    <th>Détails</th>
+                </tr>
+                <tr>
+                    <td>Diplôme d'Ingénieur</td>
+                    <td>Télécom Paris</td>
+                    <td>Septembre 2024 - Présent</td>
+                    <td>Spécialisation en Systèmes Embarqués et Data
+                        Science</td>
+                </tr>
+                <tr>
+                    <td>Classes Préparatoires aux Grandes Écoles (CPGE)</td>
+                    <td>Lycée La Martinière Monplaisir</td>
+                    <td>Septembre 2021 - Août 2024</td>
+                    <td>Filière MPSI/MP* (Mathématiques, Physique, Chimie,
+                        Informatique)</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Projets Académiques & Personnels</h2>
+
+            <h3>Contrôleurs Matériels Personnalisés & Traitement du Signal</h3>
+            <ul>
+                <li>Conception et simulation de contrôleurs matériels en
+                    VHDL/Verilog.</li>
+                <li>Développement d'un contrôleur mémoire personnalisé
+                    s'interfaçant avec de la Block RAM (BRAM), supportant les
+                    modes de transaction simple et rafale (<em>burst</em>) via le
+                    bus Avalon.</li>
+                <li>Architecture d'un contrôleur vidéo avec sortie VGA et
+                    gestion de mémoire SDRAM, intégrant un arbitre matériel pour
+                    coordonner l'accès aux données.</li>
+                <li><strong>Technologies :</strong> Conception FPGA,
+                    VHDL/Verilog, Interface Avalon, Arbitrage Mémoire,
+                    Simulation de Logique Numérique.</li>
+            </ul>
+
+            <h3>Programmation Embarquée Asynchrone en Rust</h3>
+            <ul>
+                <li>Développement d'une application Rust
+                    <strong>bare-metal</strong> et multitâche, utilisant un
+                    framework asynchrone pour gérer simultanément une machine
+                    virtuelle personnalisée, des communications série et des
+                    tâches d'affichage en temps réel.</li>
+                <li>Conception d'une gestion de mémoire sans allocation
+                    (<em>zero-allocation</em>) sécurisée et d'une communication
+                    inter-tâches utilisant des primitives de base (Channels,
+                    Signals, Mutexes) dans un environnement <code>no_std</code>
+                    strict.</li>
+            </ul>
+
+            <h3>Programmation Embarquée Bas Niveau (Bare-Metal)</h3>
+            <ul>
+                <li>Développement d'un firmware C <strong>bare-metal</strong>
+                    utilisant une architecture <em>super-loop</em> et des
+                    interruptions matérielles (IRQ) pour gérer l'affichage de
+                    données en temps réel sur une matrice de LED.</li>
+                <li>Implémentation de pilotes (<em>drivers</em>) bas niveau
+                    incluant GPIO, Horloges, UART avec IRQ, I2C et Timers.</li>
+            </ul>
+
+            <h3>Simulation Hospitalière & Prédiction par IA</h3>
+            <ul>
+                <li>Système complet de simulation d'un hôpital intégrant une
+                    simulation à événements discrets, une surveillance en temps
+                    réel et des prédictions par <em>machine learning</em>.</li>
+                <li>Tableaux de bord interactifs développés avec Flask et
+                    Chart.js pour suivre les statistiques et détecter les
+                    incidents.</li>
+                <li>Utilisation de SimPy pour la simulation d'événements et de
+                    scikit-learn pour les modèles d'apprentissage
+                    automatique.</li>
+            </ul>
+
+            <h3>Système de Contrôle de Robot Autonome</h3>
+            <ul>
+                <li>Système complet de contrôle incluant une localisation par
+                    vision, une navigation autonome et un contrôle via interface
+                    web.</li>
+                <li>Fonctionnalités de contrôle et de surveillance du robot en
+                    temps réel via l'interface web.</li>
+                <li>Utilisation de Python, OpenCV, Raspberry Pi et d'une carte
+                    de contrôle moteur I2C.</li>
+            </ul>
+
+            <h3>Simulation de Production en Usine</h3>
+            <ul>
+                <li>Simulation et implémentation (en Java) d'une usine contenant
+                    divers composants, y compris des robots autonomes suivant
+                    une liste de visite prédéfinie.</li>
+                <li>Architecture suivant le patron de conception MVC
+                    (Modèle-Vue-Contrôleur) avec gestion des exceptions d'E/S
+                    (IO).</li>
+                <li>Interface graphique pour visualiser l'usine et sa
+                    simulation.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Expérience Professionnelle</h2>
+            <table>
+                <tr>
+                    <th>Poste</th>
+                    <th>Entreprise</th>
+                    <th>Période</th>
+                    <th>Détails</th>
+                </tr>
+                <tr>
+                    <td>Préparateur de Commandes & Agent Logistique</td>
+                    <td>Hospices Civils de Lyon (HCL)</td>
+                    <td>2022 - 2026 (Vacances scolaires et estivales)</td>
+                    <td>Travail à la Pharmacie Centrale des HCL en tant que
+                        préparateur de commandes et agent de logistique en
+                        magasin.</td>
+                </tr>
+                <tr>
+                    <td>Professeur Particulier - Mathématiques & Physique</td>
+                    <td>Complétude</td>
+                    <td>Septembre 2024 - Présent</td>
+                    <td>Cours particuliers personnalisés pour des élèves de
+                        collège et de lycée.</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Compétences Techniques</h2>
+            <ul>
+                <li><strong>Langages de Programmation :</strong> Python, C,
+                    Assembleur (ARM), SystemVerilog, Rust, Java, OCaml, C++,
+                    JavaScript</li>
+                <li><strong>Outils & Technologies :</strong> Git, Linux,
+                    Programmation Embarquée (C/Rust <em>bare-metal</em>, FPGA,
+                    QuestaSim), Data Science (Pandas, NumPy, Scikit-learn,
+                    PyTorch), SQL (PostgreSQL), Développement Web (HTML, CSS,
+                    JS, Astro), LaTeX</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Langues</h2>
+            <ul>
+                <li><strong>Français :</strong> Langue maternelle</li>
+                <li><strong>Anglais :</strong> Courant (C1) - Certificat
+                    Linguaskill (Compréhension orale et écrite) : 180+</li>
+                <li><strong>Espagnol :</strong> Intermédiaire (B1)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Centres d'Intérêt</h2>
+            <ul>
+                <li><strong>Sports :</strong> Pratique de divers sports, en
+                    particulier les sports de raquette et le cyclisme.</li>
+                <li><strong>Informatique & Programmation :</strong> Au-delà du
+                    cadre académique, j'aime comprendre le fonctionnement
+                    général des ordinateurs, coder sur mon temps libre et
+                    découvrir de nouvelles technologies.</li>
+                <li><strong>Jeux vidéo :</strong> Passionné par les jeux vidéo,
+                    particulièrement les scènes compétitives.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Informations Complémentaires</h2>
+            <ul>
+                <li><strong>Permis de conduire :</strong> Permis B</li>
+                <li><strong>Disponibilité :</strong> À la recherche
+                    d'opportunités de stage dans les domaines de l'informatique,
+                    des systèmes embarqués et de la data science.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p id="footer-copyright"> &copy; <script>document.write(new Date().getFullYear());</script> Arsène Mallet (arsnm). Tous droits réservés. </p>
+    </footer>
+</body>
+</html>
