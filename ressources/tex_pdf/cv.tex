@@ -1,0 +1,376 @@
+\documentclass[10pt, a4paper]{article}
+
+% Packages:
+\usepackage[
+    ignoreheadfoot,
+    top=2 cm,
+    bottom=2 cm,
+    left=2 cm,
+    right=2 cm,
+    footskip=1.0 cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 79, 144}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Arsene Mallet - Resume},
+    pdfauthor={Arsene Mallet},
+    pdfcreator={LaTeX},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+% Ensure machine readable:
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+% Settings:
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0cm}
+\makeatletter
+\let\ps@customFooterStyle\ps@plain
+\patchcmd{\ps@customFooterStyle}{\thepage}{
+    \color{gray}\textit{\small Arsène Mallet - Page \thepage{} of \pageref*{LastPage}}
+}{}{}
+\makeatother
+\pagestyle{customFooterStyle}
+
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{-1pt}{0.3 cm}{0.2 cm}
+
+\renewcommand\labelitemi{$\circ$}
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4 cm + 10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0.2 cm + 0.00001 cm}{0.2 cm + 0.00001 cm}
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+}
+
+\newcommand{\placelastupdatedtext}{%
+  \AddToShipoutPictureFG*{%
+    \put(
+        \LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
+        \LenToUnit{\paperheight-1.0 cm}
+    ){\vtop{{\null}\makebox[0pt][c]{
+        \small\color{gray}\textit{Last updated April 2026}\hspace{\widthof{Last updated April 2026}}
+    }}}%
+  }%
+}
+
+\let\hrefWithoutArrow\href
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{}
+
+    \placelastupdatedtext
+    \begin{header}
+        \textbf{\fontsize{24 pt}{24 pt}\selectfont Arsène Mallet}
+
+        \vspace{0.3 cm}
+
+        \normalsize
+        \mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.13cm}Palaiseau, France}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{mailto:arsene.mallet@telecom-paris.fr}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}arsene.mallet@telecom-paris.fr}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{tel:+33-782-86-56-66}{\color{black}{\footnotesize\faPhone*}\hspace*{0.13cm} +33 7 82 86 56 66}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://linkedin.com/in/arsene-mallet}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}arsene-mallet}}%
+        \kern 0.25 cm%
+        \AND%
+        \kern 0.25 cm%
+        \mbox{\hrefWithoutArrow{https://github.com/arsnm}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}arsnm}}%
+    \end{header}
+
+    \vspace{0.3 cm - 0.3 cm}
+
+    \section{Education}
+
+        \begin{twocolentry}{
+        \textit{Palaiseau, France} \\
+        \textit{Sept 2024 – Present}}
+            \textbf{Telecom Paris} \\
+            \textit{Master's Degree in Engineering}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Specialization in Embedded Systems and Data Science.
+            \end{highlights}
+        \end{onecolentry}
+
+        \begin{twocolentry}{
+        \textit{Lyon, France} \\
+        \textit{Sept 2021 – Aug 2024}}
+            \textbf{Lycée La Martinière Monplaisir} \\
+            \textit{Preparatory Classes for French Engineering Schools}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item MPSI/MP* program (Mathematics, Physics, Chemistry,
+                    Computer Science).
+                \item Intensive preparation for competitive entrance exams to
+                    French "Grandes Écoles".
+            \end{highlights}
+        \end{onecolentry}
+
+    \section{Academic \& Personal Projects}
+
+        \begin{onecolentry}
+            \textbf{Custom Hardware Controllers \& Signal Processing}
+        \end{onecolentry}
+        \vspace{0.05 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Designed and simulated hardware controllers using
+                    VHDL/Verilog.
+                \item Developed a custom memory controller interfacing with
+                    Block RAM (BRAM), supporting single and burst transaction
+                    modes via the Avalon bus.
+                \item Architected a video controller featuring VGA output and
+                    SDRAM memory management, integrating a hardware arbiter to
+                    coordinate data access.
+            \end{highlights}
+        \end{onecolentry}
+        \vspace{0.2 cm}
+
+        \begin{onecolentry}
+            \textbf{Asynchronous Embedded Rust Programming}
+        \end{onecolentry}
+        \vspace{0.05 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Developed a bare-metal, multitasking Rust application
+                    utilizing an asynchronous framework to manage a custom
+                    virtual machine, serial communications, and real-time
+                    display.
+                \item Engineered safe, zero-allocation memory pooling and
+                    inter-task communication using core primitives (Channels,
+                    Signals, Mutexes) in a strict \texttt{no\_std} environment.
+            \end{highlights}
+        \end{onecolentry}
+        \vspace{0.2 cm}
+
+        \begin{onecolentry}
+            \textbf{Low-level, Bare-metal Embedded Programming}
+        \end{onecolentry}
+        \vspace{0.05 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Developed bare-metal C firmware utilizing a super-loop
+                    architecture and hardware interrupts to manage real-time
+                    data visualization on an LED matrix.
+                \item Implemented low-level drivers including GPIO, Clocks, UART
+                    with IRQ, I2C, and Timers.
+            \end{highlights}
+        \end{onecolentry}
+        \vspace{0.2 cm}
+
+        \begin{onecolentry}
+            \textbf{Hospital Simulation \& AI Prediction}
+        \end{onecolentry}
+        \vspace{0.05 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Complete hospital simulation system integrating discrete
+                    event simulation (SimPy), real-time monitoring
+                    (Flask/Chart.js), and machine learning predictions
+                    (scikit-learn).
+            \end{highlights}
+        \end{onecolentry}
+        \vspace{0.2 cm}
+
+        \begin{onecolentry}
+            \textbf{Autonomous Robot Control System}
+        \end{onecolentry}
+        \vspace{0.05 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Vision-based localization (OpenCV), autonomous navigation,
+                    and web interface control (Python, Raspberry Pi, I2C
+                    controller).
+            \end{highlights}
+        \end{onecolentry}
+        \vspace{0.2 cm}
+
+        \begin{onecolentry}
+            \textbf{Factory Production Simulation}
+        \end{onecolentry}
+        \vspace{0.05 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Implemented in Java following the MVC
+                    (Model-View-Controller) pattern with a graphical interface
+                    to visualize autonomous robots and production components.
+            \end{highlights}
+        \end{onecolentry}
+
+    \section{Work Experience}
+
+        \begin{twocolentry}{
+        \textit{Lyon, France} \\
+        \textit{2022 – 2026}}
+            \textbf{Lyon Civil Hospitals (Hospices Civils de Lyon)} \\
+            \textit{Order Fulfillment and Warehouse Associate}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Worked at the Central Pharmacy of the Lyon Hospitals
+                    during holidays and summer breaks as an order picker and
+                    warehouse logistics agent.
+            \end{highlights}
+        \end{onecolentry}
+
+        \begin{twocolentry}{
+        \textit{France} \\
+        \textit{Sept 2024 – Present}}
+            \textbf{Complétude} \\
+            \textit{Private Tutor - Mathematics \& Physics}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Personalized tutoring sessions for middle school and high
+                    school students in mathematics and physics.
+            \end{highlights}
+        \end{onecolentry}
+
+    \section{Technical Skills}
+
+        \begin{onecolentry}
+            \textbf{Programming Languages:} Python, C, ASM (ARM), SystemVerilog,
+            Rust, Java, OCaml, C++, JavaScript.
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{onecolentry}
+            \textbf{Tools \& Technologies:} Git, Linux, Embedded Programming
+            (Bare-metal C/Rust, FPGA, QuestaSim), Data Science (Pandas, NumPy,
+            Scikit-learn, PyTorch), SQL (PostgreSQL), Web Development (HTML,
+            CSS, JS, Astro), \LaTeX.
+        \end{onecolentry}
+
+    \section{Languages}
+
+        \begin{onecolentry}
+            \textbf{French:} Native.
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{onecolentry}
+            \textbf{English:} Fluent (C1) - Linguaskill Certificate: 180+.
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{onecolentry}
+            \textbf{Spanish:} Intermediate (B1).
+        \end{onecolentry}
+
+    \section{Interests \& Hobbies}
+
+        \begin{onecolentry}
+            \textbf{Sports:} Enthusiast in various sports, particularly racket
+            sports and cycling.
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{onecolentry}
+            \textbf{Programming \& Computer Science:} Enjoy understanding
+            computer architecture, coding in free time, and exploring new
+            technologies.
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{onecolentry}
+            \textbf{Videogames:} I like playing videogames, especially
+            competitive ones.
+        \end{onecolentry}
+
+    \section{Additional Information}
+
+        \begin{onecolentry}
+            \textbf{Driving License:} French Permis B.
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{onecolentry}
+            \textbf{Availability:} Seeking internship opportunities in computer
+            science, embedded systems, and data science.
+        \end{onecolentry}
+
+\end{document}
